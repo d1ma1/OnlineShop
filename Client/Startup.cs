@@ -10,6 +10,7 @@ namespace OnlineShop.Client
         {
             //more code may be present here
             services.AddTelerikBlazor();
+
         }
 
         public void Configure(IComponentsApplicationBuilder app)

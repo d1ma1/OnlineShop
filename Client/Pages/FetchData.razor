@@ -1,46 +1,48 @@
 ﻿@page "/fetchdata"
-@using OnlineShop.Shared
 @inject HttpClient Http
+@using System.ComponentModel.DataAnnotations
 
-<h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
-
-@if (forecasts == null)
+@if (products == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <table class="table">
+    <table class='table'>
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Product</th>
+                <th>Price</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var product in products)
             {
+                var img = @product.ProductID.ToString();
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td><img src="images/@product.Image" width="100px" /> @product.ProductName</td>
+                    <td>$@product.UnitPrice</td>
                 </tr>
             }
         </tbody>
     </table>
 }
 
-@code {
-    private WeatherForecast[] forecasts;
+@functions {
+    Product[] products;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
+        products = await Http.GetJsonAsync<Product[]>("sample-data/products.json");
     }
 
+    class Product
+    {
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public decimal UnitPrice { get; set; }
+        public int UnitsInStock { get; set; }
+        public string Image { get; set; }
+    }
 }
