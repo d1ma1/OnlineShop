@@ -8,105 +8,108 @@
 }
 else
 {
+   
+        <div class="container">
+            <div class="col-xs-12 col-md-12 two-columns">
 
-    <div class="container">
-        <div class="col-xs-12 col-md-12 two-columns">
+                <!-- First product box start here-->
 
-            <!-- First product box start here-->
-
-            @foreach (var product in products)
-            {
-
-                @if (product.UnitsInStock > 0)
+                @foreach (var product in products)
                 {
-                    stockOpacity = 1;
-                    classProduct = "anime";
-                }
-                else
-                {
-                    stockOpacity = 0.5f;
-                    classProduct = "";
-                }
 
-                <div style="opacity:@stockOpacity" class="@classProduct prod-info-main prod-wrap clearfix product-grid">
+                    @if (product.UnitsInStock > 0)
+                    {
+                        stockOpacity = 1;
+                        classProduct = "anime";
+                    }
+                    else
+                    {
+                        stockOpacity = 0.5f;
+                        classProduct = "";
+                    }
 
-                    <div class="row">
+                    <div style="opacity:@stockOpacity" class="@classProduct prod-info-main prod-wrap clearfix product-grid">
 
-                        <div class="col-md-5 col-sm-12 col-xs-12">
+                        <div class="row">
 
-                            <div class="product-image">
+                            <div class="col-md-5 col-sm-12 col-xs-12">
 
-                                <img src="images/@product.Image" width="100%" class="img-responsive">
+                                <div class="product-image">
 
-                                @if (product.UnitsInStock == 0)
-                                {
-                                    <span class="outOfStock">Out Of Stock</span>
-                                }
+                                    <img src="images/@product.Image" width="100%" class="img-responsive">
 
-                                @if (product.UnitsInStock > 0)
-                                {
-                                    if (product.Info == "Special")
+                                    @if (product.UnitsInStock == 0)
                                     {
-                                        info = "tag3 special";
+                                        <span class="outOfStock">Out Of Stock</span>
                                     }
-                                    else
+
+                                    @if (product.UnitsInStock > 0)
                                     {
-                                         info = "tag2 hot";
+                                        if (product.Info == "Special")
+                                        {
+                                            info = "tag3 special";
+                                        }
+                                        else
+                                        {
+                                            info = "tag2 hot";
+                                        }
+                                        <span class="@info">
+
+                                            @product.Info
+
+                                        </span>
                                     }
-                                    <span class="@info">
 
-                                        @product.Info
-
-                                    </span>
-                                }
+                                </div>
 
                             </div>
 
-                        </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
 
-                        <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="product-deatil">
 
-                            <div class="product-deatil">
-
-                                <h5 class="name">
+                                    <h5 class="name">
 
                                         @product.ProductName
 
-                                </h5>
+                                    </h5>
 
-                                <p class="price-container">
+                                    <p class="price-container">
 
-                                    <span>$@product.UnitPrice</span>
+                                        <span>$@product.UnitPrice</span>
 
-                                </p>
+                                    </p>
 
 
-                            </div>
+                                </div>
 
-                            <div class="description">
+                                <div class="description">
 
-                                <p>@product.Description </p>
+                                    <p>@product.Description </p>
 
-                            </div>
+                                </div>
 
-                            <div class="product-info smart-form">
+                                <div class="product-info smart-form">
 
-                                <div class="row">
+                                    <div class="row">
 
-                                    <div class="col-md-12">
+                                        <div class="col-md-12">
 
-                                        <div class="rating">
-                                            Rating:
+                                            <div class="rating">
+                                                <hr />
+                                                Rating:
 
-                                            @for (int x = 1; x <= @product.Stars; x++)
-                                            {
-                                                <i class="fa fa-star text-danger"></i>
-                                            }
+                                                @for (int x = 1; x <= @product.Stars; x++)
+                                                {
+                                                    <i class="fa fa-star text-danger"></i>
+                                                }
 
-                                            @for (int x = 1; x <= 5 - @product.Stars; x++)
-                                            {
-                                                <i class="fa fa-star text-warning"></i>
-                                            }
+                                                @for (int x = 1; x <= 5 - @product.Stars; x++)
+                                                {
+                                                    <i class="fa fa-star text-warning"></i>
+                                                }
+
+                                            </div>
 
                                         </div>
 
@@ -117,38 +120,36 @@ else
                             </div>
 
                         </div>
-
                     </div>
-                </div>
-            }
-            <!-- end product -->
+                }
+                <!-- end product -->
 
+            </div>
         </div>
-    </div>
 
-}
+        }
 
-@functions {
-    Product[] products;
+        @functions {
+            Product[] products;
 
     private double stockOpacity;
-    private string classProduct;
-    private string info;
+        private string classProduct;
+        private string info;
 
-    protected override async Task OnInitializedAsync()
-    {
-        products = await Http.GetJsonAsync<Product[]>("sample-data/products.json");
-    }
+        protected override async Task OnInitializedAsync()
+        {
+            products = await Http.GetJsonAsync<Product[]>("sample-data/products.json");
+        }
 
-    class Product
-    {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public decimal UnitPrice { get; set; }
-        public int UnitsInStock { get; set; }
-        public string Image { get; set; }
-        public int Stars { get; set; }
-        public string Description { get; set; }
-        public string Info { get; set; }
-    }
-}
+        class Product
+        {
+            public int ProductID { get; set; }
+            public string ProductName { get; set; }
+            public decimal UnitPrice { get; set; }
+            public int UnitsInStock { get; set; }
+            public string Image { get; set; }
+            public int Stars { get; set; }
+            public string Description { get; set; }
+            public string Info { get; set; }
+        }
+        }
