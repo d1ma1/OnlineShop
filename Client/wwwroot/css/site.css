@@ -1,11 +1,10 @@
 
 body {
-    /*margin-top: 20px;
-    background: #eee;*/
-    background: url('images/background.jpg') repeat;
-    /*background-size: cover;*/
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-
 
 header {
     background-color: #22233F;
@@ -13,13 +12,18 @@ header {
     font-size: 32px;
     margin-bottom: 25px;
     padding: 15px;
-    padding-left: 150px;
-    transition: transform 0.5s ease;
 }
 
+footer {
+    background-color: #22233F;
+    color: white;
+    margin-top: 25px;
+    padding: 15px;
+}
 
-header:hover {
-    transform: scale(1.2);
+.loading-section {
+    color: white;
+    font-size: 32px;
 }
 
 .outOfStock {
@@ -300,6 +304,8 @@ header:hover {
 }
 
 @media only screen and (min-width:1024px) {
+
+
     .prod-info-main div[class*=col-md-4] {
         padding-right: 0
     }
