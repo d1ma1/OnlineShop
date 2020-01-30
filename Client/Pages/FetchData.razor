@@ -1,6 +1,5 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
-@using System.ComponentModel.DataAnnotations
 
 
 @if (products == null)
@@ -9,28 +8,106 @@
 }
 else
 {
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
+
+    <div class="container">
+        <div class="col-xs-12 col-md-12 two-columns">
+
+            <!-- First product box start here-->
+
             @foreach (var product in products)
             {
-                var img = @product.ProductID.ToString();
-                <tr>
-                    <td><img src="images/@product.Image" width="100px" /> @product.ProductName</td>
-                    <td>$@product.UnitPrice</td>
-                </tr>
+                <div class="prod-info-main prod-wrap clearfix product-grid">
+
+                    <div class="row">
+
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+
+                            <div class="product-image">
+
+                                <img src="images/@product.Image" width="100%" class="img-responsive">
+
+                                    <span class="tag2 hot">
+
+                                        @product.Info
+
+                                    </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+
+                            <div class="product-deatil">
+
+                                <h5 class="name">
+
+                                    <a href="#">
+
+                                        @product.ProductName
+
+                                    </a>
+
+                                </h5>
+
+                                <p class="price-container">
+
+                                    <span>$@product.UnitPrice</span>
+
+                                </p>
+
+                                <span class="tag1"></span>
+
+                            </div>
+
+                            <div class="description">
+
+                                <p>@product.Description </p>
+
+                            </div>
+
+                            <div class="product-info smart-form">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                        <div class="rating">
+                                            Rating:
+
+                                            @for (int x = 1; x <= @product.Stars; x++)
+                                            {
+                                                <i class="fa fa-star text-danger"></i>
+                                            }
+
+                                            @for (int x = 1; x <= 5 - @product.Stars; x++)
+                                            {
+                                                <i class="fa fa-star text-warning"></i>
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
+            <!-- end product -->
+
+        </div>
+    </div>
+
 }
 
 @functions {
     Product[] products;
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -44,5 +121,8 @@ else
         public decimal UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
         public string Image { get; set; }
+        public int Stars { get; set; }
+        public string Description { get; set; }
+        public string Info { get; set; }
     }
 }

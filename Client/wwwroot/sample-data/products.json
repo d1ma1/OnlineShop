@@ -1,22 +1,33 @@
-[
+﻿[
   {
     "ProductID": 1,
     "ProductName": "Chai",
     "UnitPrice": 18,
     "UnitsInStock": 39,
-    "Image": "1.jpg"
+    "Image": "1.jpg",
+    "Stars": 3,
+    "Description": "The One & Only Vanilla Flavored Chai is inspired by the sweet spice of aniseed, cinnamon and fennel, topped off with fine vanilla.",
+    "Info": "Special"
   },
   {
     "ProductID": 2,
     "ProductName": "Chang",
     "UnitPrice": 19,
-    "UnitsInStock": 17
+    "UnitsInStock": 17,
+    "Image": "2.jpg",
+    "Stars": 5,
+    "Description": "A new product, Chang Classic, was launched, with production shared between ThaiBev's three breweries. The recipe of Chang Classic includes rice, previously only used in the domestic 6.4% version of Chang Beer.",
+    "Info": "HOT"
   },
   {
     "ProductID": 3,
     "ProductName": "Aniseed Syrup",
     "UnitPrice": 10,
-    "UnitsInStock": 0
+    "UnitsInStock": 0,
+    "Image": "3.jpg",
+    "Stars": 4,
+    "Description": "Anise is the liquorice-like flavour of the Pastis liqueur and aperitif typically consumed in the South of France, particularly Marseille, and associated with the game of pétanque played in picturesque village squares.",
+    "Info": "HOT"
   },
   {
     "ProductID": 4,
