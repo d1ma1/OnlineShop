@@ -1,15 +1,23 @@
-﻿body {
+
+body {
     /*margin-top: 20px;*/
     background: #eee;
 }
 
 header {
-    /*height: 100px;*/
     background-color: #22233F;
     color: white;
     font-size: 32px;
     margin-bottom: 25px;
     padding: 15px;
+}
+
+.outOfStock {
+    color: red;
+    opacity: 1;
+    font-size: 25px;
+    font-weight:100;
+    margin-left: 25px;
 }
 .prod-info-main {
     border: 1px solid #CEEFFF;
@@ -69,7 +77,7 @@ header {
 }
 
 .prod-info-main .product-deatil span.sale {
-    background-color: #21c2f8
+    background-color: #22233F
 }
 
 .prod-info-main .product-deatil span.discount {
@@ -110,7 +118,7 @@ header {
 }
 
 .load-more-btn {
-    background-color: #21c2f8;
+    background-color: #22233F;
     border-bottom: 2px solid #037ca5;
     border-radius: 2px;
     border-top: 2px solid #0cf;
@@ -123,7 +131,7 @@ header {
 .prod-info-main .product-deatil p.price-container span,
 .shipping table tbody tr td p.price-container span,
 .shopping-items table tbody tr td p.price-container span {
-    color: #21c2f8;
+    color: #22233F;
     font-family: Verdana, 'Roboto Condensed', sans-serif;
     font-size: 24px;
     line-height: 20px
@@ -271,7 +279,7 @@ header {
 
 .product-deatil .certified ul li a span {
     display: block;
-    color: #21c2f8;
+    color: #22233F;
     font-size: 13px;
     font-weight: 700;
     text-align: center
@@ -316,4 +324,14 @@ header {
     .prod-info-main .description {
         height: 120px;
     }
+
+
+    .anime {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .anime:hover {
+        transform: scale(1.2);
+    }
+
 }

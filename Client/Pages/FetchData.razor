@@ -20,8 +20,15 @@ else
                 @if (product.UnitsInStock > 0)
                 {
                     stockOpacity = 1;
+                    classProduct = "anime";
                 }
-                <div style="opacity:@stockOpacity" class="prod-info-main prod-wrap clearfix product-grid">
+                else
+                {
+                    stockOpacity = 0.5f;
+                    classProduct = "";
+                }
+
+                <div style="opacity:@stockOpacity" class="@classProduct prod-info-main prod-wrap clearfix product-grid">
 
                     <div class="row">
 
@@ -31,11 +38,27 @@ else
 
                                 <img src="images/@product.Image" width="100%" class="img-responsive">
 
-                                <span class="tag2 hot">
+                                @if (product.UnitsInStock == 0)
+                                {
+                                    <span class="outOfStock">Out Of Stock</span>
+                                }
 
-                                    @product.Info
+                                @if (product.UnitsInStock > 0)
+                                {
+                                    if (product.Info == "Special")
+                                    {
+                                        info = "tag3 special";
+                                    }
+                                    else
+                                    {
+                                         info = "tag2 hot";
+                                    }
+                                    <span class="@info">
 
-                                </span>
+                                        @product.Info
+
+                                    </span>
+                                }
 
                             </div>
 
@@ -47,11 +70,7 @@ else
 
                                 <h5 class="name">
 
-                                    <a href="#">
-
                                         @product.ProductName
-
-                                    </a>
 
                                 </h5>
 
@@ -61,7 +80,6 @@ else
 
                                 </p>
 
-                                <span class="tag1"></span>
 
                             </div>
 
@@ -106,14 +124,16 @@ else
             <!-- end product -->
 
         </div>
-            </div>
+    </div>
 
 }
 
 @functions {
     Product[] products;
 
-    private double stockOpacity = 0.5f;
+    private double stockOpacity;
+    private string classProduct;
+    private string info;
 
     protected override async Task OnInitializedAsync()
     {
