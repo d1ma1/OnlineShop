@@ -1,7 +1,7 @@
-﻿[
+[
   {
     "ProductID": 1,
-    "ProductName": "Chai",
+    "ProductName": "Vanilla Flavored Chai",
     "UnitPrice": 18,
     "UnitsInStock": 39,
     "Image": "1.jpg",
@@ -11,7 +11,7 @@
   },
   {
     "ProductID": 2,
-    "ProductName": "Chang",
+    "ProductName": "Chang Classic",
     "UnitPrice": 19,
     "UnitsInStock": 17,
     "Image": "2.jpg",
@@ -26,51 +26,78 @@
     "UnitsInStock": 0,
     "Image": "3.jpg",
     "Stars": 4,
-    "Description": "Anise is the liquorice-like flavour of the Pastis liqueur and aperitif typically consumed in the South of France, particularly Marseille, and associated with the game of pétanque played in picturesque village squares.",
-    "Info": "HOT"
+    "Description": "Anise is the liquorice-like flavour of the Pastis liqueur and aperitif typically consumed in the South of France, particularly Marseille, and associated with the game of petanque played in picturesque village squares.",
+    "Info": "Special"
   },
   {
     "ProductID": 4,
-    "ProductName": "Chef Anton's Cajun Seasoning",
+    "ProductName": "Maple Seasonings",
     "UnitPrice": 22,
-    "UnitsInStock": 53
+    "UnitsInStock": 53,
+    "Image": "4.jpg",
+    "Stars": 3,
+    "Description": "4 oz Jars of Maple Sugar and Seasonings. Perfect for adding the great taste of maple to all of your culinary creations. ",
+    "Info": "Special"
   },
   {
     "ProductID": 5,
-    "ProductName": "Chef Anton's Gumbo Mix",
+    "ProductName": "GameDay Gumbo",
     "UnitPrice": 21.35,
-    "UnitsInStock": 0
+    "UnitsInStock": 0,
+    "Image": "5.jpg",
+    "Stars": 3,
+    "Description": "A 6 Pack of a GameDay Gumbo, one of Louisiana's signature dishes. Delicious dish made from roux and a mixture of seafood ( usually shrimp and crab) or poultry and sausage. Served over rice and great with French bread.",
+    "Info": "Special"
   },
   {
     "ProductID": 6,
-    "ProductName": "Grandma's Boysenberry Spread",
+    "ProductName": "Boysenberries",
     "UnitPrice": 25,
-    "UnitsInStock": 120
+    "UnitsInStock": 120,
+    "Image": "6.jpg",
+    "Stars": 4,
+    "Description": "Boysenberries can get overlooked, but are a favourite in our house - especially at summer BBQs, mix some in with Dijon mustard and you've got a fantastic dip for your chicken skewers",
+    "Info": "Special"
   },
   {
     "ProductID": 7,
-    "ProductName": "Uncle Bob's Organic Dried Pears",
+    "ProductName": "The Sunny Fruit",
     "UnitPrice": 30,
-    "UnitsInStock": 0
+    "UnitsInStock": 0,
+    "Image": "7.jpg",
+    "Stars": 5,
+    "Description": "The Sunny Fruit difference begins at the source - Izmir, Turkey. Here the perfect marriage of fertile soils and unique climate creates the most perfect dried fruits on earth. ",
+    "Info": "HOT"
   },
   {
     "ProductID": 8,
     "ProductName": "Northwoods Cranberry Sauce",
     "UnitPrice": 40,
-    "UnitsInStock": 0
+    "UnitsInStock": 0,
+    "Image": "8.jpg",
+    "Stars": 3,
+    "Description": "Delicious Cranberry Chipotle Chutney made with Wisconsin grown cranberries, and spicy chipotle chilies, blended with zesty orange and lime juice and sweetened with sugar.",
+    "Info": "Special"
   },
   {
     "ProductID": 9,
-    "ProductName": "Mishi Kobe Niku",
+    "ProductName": "Black Angus",
     "UnitPrice": 97,
-    "UnitsInStock": 29
+    "UnitsInStock": 29,
+    "Image": "9.jpg",
+    "Stars": 2,
+    "Description": "The Irish bovine live in a mild and humid environment, free to move into lush green pastures. As a result their muscles grow strong and the meat is tender and tasty. ",
+    "Info": "Special"
   },
   {
     "ProductID": 10,
     "ProductName": "Ikura",
     "UnitPrice": 31,
     "UnitsInStock": 31,
-    "DeliveryOn": "new"
+    "Image": "10.jpg",
+    "Stars": 1,
+    "Description": "Ikura (also known as salmon roe) are round, almost transparent salmon eggs, an unusual ingredient which is especially popular in Japan. ",
+    "Info": "Special"
   }
 ]
 

@@ -2,9 +2,8 @@
 body {
     /*margin-top: 20px;
     background: #eee;*/
-    background: url('images/background.jpg') no-repeat;
-    background-size: cover;
-
+    background: url('images/background.jpg') repeat;
+    /*background-size: cover;*/
 }
 
 
@@ -15,7 +14,7 @@ header {
     margin-bottom: 25px;
     padding: 15px;
     padding-left: 150px;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 
