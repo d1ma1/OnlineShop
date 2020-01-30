@@ -1,5 +1,5 @@
 ﻿body {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     background: #eee;
 }
 
@@ -8,7 +8,7 @@ header {
     background-color: #22233F;
     color: white;
     font-size: 32px;
-    margin: 25px;
+    margin-bottom: 25px;
     padding: 15px;
 }
 .prod-info-main {
@@ -310,7 +310,7 @@ header {
     .two-columns {
         display: inline-grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1%;
+        grid-column-gap: 10%;
     }
 
     .prod-info-main .description {

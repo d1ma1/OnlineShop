@@ -16,7 +16,12 @@ else
 
             @foreach (var product in products)
             {
-                <div class="prod-info-main prod-wrap clearfix product-grid">
+
+                @if (product.UnitsInStock > 0)
+                {
+                    stockOpacity = 1;
+                }
+                <div style="opacity:@stockOpacity" class="prod-info-main prod-wrap clearfix product-grid">
 
                     <div class="row">
 
@@ -26,11 +31,11 @@ else
 
                                 <img src="images/@product.Image" width="100%" class="img-responsive">
 
-                                    <span class="tag2 hot">
+                                <span class="tag2 hot">
 
-                                        @product.Info
+                                    @product.Info
 
-                                    </span>
+                                </span>
 
                             </div>
 
@@ -101,13 +106,14 @@ else
             <!-- end product -->
 
         </div>
-    </div>
+            </div>
 
 }
 
 @functions {
     Product[] products;
 
+    private double stockOpacity = 0.5f;
 
     protected override async Task OnInitializedAsync()
     {
