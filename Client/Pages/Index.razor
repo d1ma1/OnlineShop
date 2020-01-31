@@ -82,22 +82,22 @@ else
                                 <p class="price-container">
 
                                     <span> @String.Format("{0:C}", @product.UnitPrice)</span>
-                                </p>
 
+                                </p>
+                                
                             </div>
 
                             @*<div class="description">
 
-                                    <p>@product.Description </p>
+                                <p>@product.Description </p>
 
-                                </div>*@
+                             </div>*@
 
                             <div class="product-info smart-form">
 
                                 <div class="row">
 
                                     <div class="col-md-12">
-
                                         <div class="rating">
 
                                             Rating:
@@ -126,7 +126,7 @@ else
                             {
                                 <div class="col-md-6 read">
                                     <a @onclick="AddProduct" class="btn btn-danger">Add to cart</a>
-                                    <a href="#" class="btn btn-info">More info</a>
+                                    @*<a @onclick=" class="btn btn-info">More info</a>*@
                                 </div>
                             }
 
@@ -147,14 +147,14 @@ else
     private double stockOpacity;
     private string classProduct;
     private string info;
+    private string addedProduct = "";
+    private int count = 0;
+    private string moreInfo = "";
 
     protected override async Task OnInitializedAsync()
     {
         products = await Http.GetJsonAsync<Product[]>("sample-data/products.json");
     }
-
-    private string addedProduct = "";
-    private int count = 0;
 
     private void AddProduct()
     {

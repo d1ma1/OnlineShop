@@ -1,6 +1,5 @@
 @import url('site-footer.css');
 
-
 body {
     background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../images/background.jpg');
     background-repeat: no-repeat;
@@ -368,6 +367,7 @@ header {
 
     .read {
         margin-top: 40px;
+        margin-left:3.5rem;
     }
 
     header {
