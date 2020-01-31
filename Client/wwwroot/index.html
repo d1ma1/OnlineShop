@@ -7,9 +7,11 @@
     <title>OnlineShop</title>
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-social.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/@progress/kendo-theme-default@latest/dist/all.css" />
     <script src="_content/telerik.ui.for.blazor/js/telerik-blazor.js" defer></script>
+    <script src="_content/telerik.ui.for.blazor.trial/js/telerik-blazor.js" defer></script>
     <!-- For Trial licenses use
       <script src="_content/telerik.ui.for.blazor.trial/js/telerik-blazor.js" defer></script>
     -->
@@ -26,9 +28,9 @@
             justify-content: center;
         }
 
-        .loading-section h2 {
-            color: #00b5dc;
-        }
+            .loading-section h2 {
+                color: #00b5dc;
+            }
 
         .loader-dot {
             height: 20px;
@@ -40,15 +42,15 @@
             animation: grow 2.1s infinite ease-in-out both;
         }
 
-        .loader-dot.dot1 {
-            -webkit-animation-delay: -0.96s;
-            animation-delay: -0.96s;
-        }
+            .loader-dot.dot1 {
+                -webkit-animation-delay: -0.96s;
+                animation-delay: -0.96s;
+            }
 
-        .loader-dot.dot2 {
-            -webkit-animation-delay: -0.48s;
-            animation-delay: -0.48s;
-        }
+            .loader-dot.dot2 {
+                -webkit-animation-delay: -0.48s;
+                animation-delay: -0.48s;
+            }
 
         @-webkit-keyframes grow {
             0%, 80%, 100% {
@@ -65,7 +67,11 @@
 <body>
 
     <header class="text-center py-3">
-        Online Shop
+        <div>
+            <img src="images/logo3.jpg" width="70px" class="img-responsive">
+            Online Shop <b class="shopName">Welcome</b>
+        </div>
+        <div>Contact us: +359 888 888 XXX <i class="fas fa-shopping-cart"></i> </div>
     </header>
 
     <app>
@@ -80,13 +86,24 @@
         </div>
     </app>
 
-
     <script src="_framework/blazor.webassembly.js"></script>
 
-    <footer class="page-footer font-small blue">
+    <footer class="page-footer center font-small blue">
 
-        <div class="footer-copyright text-center py-3">
-            © 2020 Copyright | All rights reserved
+        <div class="site-footer">
+            <div class="info">
+                <p> &copy; 2020 Welcome | All rights reserved.</p>
+            </div>
+
+            <div class="social">
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+
         </div>
 
     </footer>

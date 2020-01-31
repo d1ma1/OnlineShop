@@ -1,6 +1,8 @@
+@import url('site-footer.css');
+
 
 body {
-    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('images/background.jpg');
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../images/background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -14,25 +16,40 @@ header {
     padding: 15px;
 }
 
-footer {
-    background-color: #22233F;
-    color: white;
-    margin-top: 25px;
-    padding: 15px;
+.read {
+    max-width: 100%;
+}
+
+.read a {
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.btn-danger {
+    color: white !important;
 }
 
 .loading-section {
     color: white;
     font-size: 32px;
+    font-weight: bold;
 }
 
 .outOfStock {
     color: red;
     opacity: 1;
     font-size: 25px;
-    font-weight:100;
+    font-weight: 100;
     margin-left: 25px;
 }
+
+.addedProduct {
+    font-weight: bold;
+    text-align: center;
+    color: green;
+    font-size: 25px;
+}
+
 .prod-info-main {
     border: 1px solid #CEEFFF;
     margin-bottom: 20px;
@@ -341,7 +358,6 @@ footer {
         height: 120px;
     }
 
-
     .anime {
         transition: transform 0.5s ease-in-out;
     }
@@ -350,4 +366,12 @@ footer {
         transform: scale(1.2);
     }
 
+    .read {
+        margin-top: 40px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-around;
+    }
 }

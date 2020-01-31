@@ -87,7 +87,7 @@
     "Image": "9.jpg",
     "Stars": 2,
     "Description": "The Irish bovine live in a mild and humid environment, free to move into lush green pastures. As a result their muscles grow strong and the meat is tender and tasty. ",
-    "Info": "Special"
+    "Info": "NEW"
   },
   {
     "ProductID": 10,
@@ -95,9 +95,9 @@
     "UnitPrice": 31,
     "UnitsInStock": 31,
     "Image": "10.jpg",
-    "Stars": 1,
+    "Stars": 0,
     "Description": "Ikura (also known as salmon roe) are round, almost transparent salmon eggs, an unusual ingredient which is especially popular in Japan. ",
-    "Info": "Special"
+    "Info": "NEW"
   }
 ]
 

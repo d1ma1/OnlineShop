@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 @inject HttpClient Http
-
+@using OnlineShop.Shared
 
 @if (products == null)
 {
@@ -17,7 +17,10 @@
 }
 else
 {
+    <p class="addedProduct">@addedProduct</p>
+
     <div class="container">
+
         <div class="col-xs-12 col-md-12 two-columns">
 
             @foreach (var product in products)
@@ -44,10 +47,6 @@ else
 
                                 <img src="images/@product.Image" width="100%" class="img-responsive">
 
-                                @if (product.UnitsInStock == 0)
-                                {
-                                    <span class="outOfStock">Out Of Stock</span>
-                                }
 
                                 @if (product.UnitsInStock > 0)
                                 {
@@ -82,17 +81,16 @@ else
 
                                 <p class="price-container">
 
-                                    <span>$@product.UnitPrice</span>
-
+                                    <span> @String.Format("{0:C}", @product.UnitPrice)</span>
                                 </p>
 
                             </div>
 
-                            <div class="description">
+                            @*<div class="description">
 
-                                <p>@product.Description </p>
+                                    <p>@product.Description </p>
 
-                            </div>
+                                </div>*@
 
                             <div class="product-info smart-form">
 
@@ -101,7 +99,7 @@ else
                                     <div class="col-md-12">
 
                                         <div class="rating">
-                                            <hr />
+
                                             Rating:
 
                                             @for (int x = 1; x <= @product.Stars; x++)
@@ -115,12 +113,22 @@ else
                                             }
 
                                         </div>
-
                                     </div>
-
                                 </div>
-
                             </div>
+
+
+                            @if (product.UnitsInStock == 0)
+                            {
+                                <p class="outOfStock">Out Of Stock</p>
+                            }
+                            else
+                            {
+                                <div class="col-md-6 read">
+                                    <a @onclick="AddProduct" class="btn btn-danger">Add to cart</a>
+                                    <a href="#" class="btn btn-info">More info</a>
+                                </div>
+                            }
 
                         </div>
 
@@ -132,7 +140,8 @@ else
     </div>
 }
 
-@functions {
+@code {
+
     Product[] products;
 
     private double stockOpacity;
@@ -144,19 +153,12 @@ else
         products = await Http.GetJsonAsync<Product[]>("sample-data/products.json");
     }
 
-    class Product
+    private string addedProduct = "";
+    private int count = 0;
+
+    private void AddProduct()
     {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public decimal UnitPrice { get; set; }
-        public int UnitsInStock { get; set; }
-        public string Image { get; set; }
-        public int Stars { get; set; }
-        public string Description { get; set; }
-        public string Info { get; set; }
+        count++;
+        addedProduct = "You have " + count + " product(s) in your basket!";
     }
 }
-
-
-
-

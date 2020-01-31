@@ -1,20 +1,15 @@
 .site-footer {
-    display: flex;	
-    justify-content: space-between;	
-    align-items: center;       	
-    background-color: black;	
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #22233F;
     color: white;
-    flex-shrink: 0; 
-    padding: 0.5rem;
-}
-.site-footer  .info {
-    padding-left: 6rem;
+    flex-shrink: 0;
+    padding: 15px;
+    margin-top: 25px;
 }
 
-.site-footer  .social {
-    padding-right: 6rem;
-}
-.site-footer  .social    ul {
+.site-footer .social ul {
 
     display: flex;
 }
@@ -29,10 +24,21 @@
 
 .site-footer  .social ul li a {
     text-decoration: none;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     color: white;
     font-size: 25px;
 } 
 
+@media only screen and (max-width:1100px) {
+
+    .site-footer {
+        font-size: 13px;
+    }
+
+    .site-footer .social ul li a {
+        padding: 0.5rem;
+        font-size: 14px;
+    }
+}
 
 
